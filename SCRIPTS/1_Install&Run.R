@@ -5,14 +5,15 @@
 # ------------------------------------------------------
 # INSTALL & LOAD PACKAGES
 
-if(FALSE){
+library(devtools)
+library(remotes)
+        
+if(TRUE){
 #url.use <- "https://gitlab.com/SOLV-Code/eramonth.git"  # -> not working?
 url.use <- "https://gitlab.com/catarinawor/eramonth.git" # working
 remotes::install_git(url = url.use)
 }
 
-library(devtools)
-library(remotes)
 library(eramonth)
 library(tidyverse)
 
