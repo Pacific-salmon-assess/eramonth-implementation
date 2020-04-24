@@ -4,10 +4,22 @@
 #=========================================================================
 
 
+
 library(eramonth)
+#fmap<-read.csv("fisheriesmap.csv")
 
 
-fmap<-read.csv("fisheriesmap.csv")
+calcMonthly(stk = "ATN", 
+	fmap = NULL, 
+	pathdb = "C:/Users/worc/Documents/CTC/ream/devs/testtxt/CASClient_2019_BE.mdb",
+	cas = NULL, 
+	pathcmz = NULL,
+    tracing = FALSE)
+
+
+
+
+
 #devtools::use_data(x, mtcars)
 
 #I will provide the casdf for external users. 
