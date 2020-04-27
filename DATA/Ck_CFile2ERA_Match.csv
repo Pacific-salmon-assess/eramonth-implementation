@@ -148,38 +148,38 @@ CFILENO,CFILENAME,CFILENAME_long,ERANO,ERANAME,Country,NewNum,Gear,NewName,Manag
 147,TBC JDF S,Canadian Juan De Fuca Terminal Sport,66,TBC JF TERM S,CA,36,S,Canadian Juan De Fuca Sport,ISBM,ISBM.Fishery_Southern.BC_S
 148,TJOHN ST S,Johnstone Strait Terminal Sport,62,TJNST TERM S,CA,26,S,Johnstone Strait Sport,ISBM,ISBM.Fishery_Southern.BC_S
 149,TWA JDF FS,Washington Juan De Fuca Freshwater Sport,75,TPS FS,US,999,S,WA Sport,ISBM,Terminal.Fishery_Southern.US_S
-150,PS 5 S,Puget Sound Area 5 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-151,PS 6 S,Puget Sound Area 6 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-152,PS 7 S,Puget Sound Area 7 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-153,TNPS S,North Puget Sound (Area 5-7) Terminal Sport,58,TPGSDN TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-154,TNPS FS,North Puget Sound (Area 5-7) Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
-155,PS 8-1 S,Puget Sound Area 8-1 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-156,PS 8-2 S,Puget Sound Area 8-2 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-157,PS 9 S,Puget Sound Area 9 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-158,TPS 8-9 FS,Puget Sound Area 8-9 Terminal Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
-159,PS 10 S,Puget Sound Area 10 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-160,PS 11 S,Puget Sound Area 11 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-161,PS 12 S,Puget Sound Area 12 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-162,TPS 12 S,Puget Sound Area 12 Terminal Sport,60,TPGSDO TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-163,TPS 12 FS,Puget Sound Area 12 Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
-164,PS 13 S,Puget Sound Area 13 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-165,TSPS S,South Puget Sound (10-11-13) Terminal Sport,60,TPGSDO TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
-166,TSPS FS,South Puget Sound (10-11-13) Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
 167,WAOCN4 S,Washington Area 4 Ocean Sport,53,N FALCON S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
 168,WAOCN3 S,Washington Area 3 Ocean Sport,53,N FALCON S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
 169,WAOCN2 S,Washington Area 2 Ocean Sport,53,N FALCON S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
 170,WAOCN1 S,Washington Area 1 Ocean Sport,53,N FALCON S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
-171,TWAC S,Washington Coast Terminal Sport,54,TNF TERM S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
+154,TNPS FS,North Puget Sound (Area 5-7) Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
 172,BUOY 10 S,Buoy 10 Sport,53,N FALCON S,US,999,S,COLR Sport,ISBM,ISBM.Fishery_N.Falcon_S
-173,TBUOY 10 S,Terminal Buoy 10 Sport,67,TCOL R S,US,999,S,COLR Sport,ISBM,Terminal.Fishery_Southern.US_S
-174,TCOL R S,Terminal Above Buoy 10 Sport,67,TCOL R S,US,999,S,CR Sport,ISBM,Terminal.Fishery_Southern.US_S
+171,TWAC S,Washington Coast Terminal Sport,54,TNF TERM S,US,999,S,WA Sport,ISBM,ISBM.Fishery_N.Falcon_S
 175,OROCN3 S,Oregon Area 3 Ocean Sport,55,S FALCON S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
+158,TPS 8-9 FS,Puget Sound Area 8-9 Terminal Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
 176,OROCN4 S,Oregon Area 4 Ocean Sport,55,S FALCON S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
 177,OROCN5 S,Oregon Area 5 Ocean Sport,55,S FALCON S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
 178,OROCN6 S,Oregon Area 6 Ocean Sport,55,S FALCON S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
-179,TORC S,Oregon Coast Terminal Sport,56,TSF TERM S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
-180,TORC FS,Oregon Coast Freshwater Sport,76,TSF TERM FS,US,999,S,OR Sport,ISBM,Terminal.Fishery_Southern.US_S
 181,CAL OCN S,California Ocean Sport,55,S FALCON S,US,999,S,CAL Sport,ISBM,ISBM.Fishery_S.Falcon_S
+163,TPS 12 FS,Puget Sound Area 12 Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
+179,TORC S,Oregon Coast Terminal Sport,56,TSF TERM S,US,999,S,OR Sport,ISBM,ISBM.Fishery_S.Falcon_S
+150,PS 5 S,Puget Sound Area 5 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+166,TSPS FS,South Puget Sound (10-11-13) Freshwater Sport,75,TPS FS,US,999,S,PGSD Sport,ISBM,Terminal.Fishery_Southern.US_S
+151,PS 6 S,Puget Sound Area 6 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+152,PS 7 S,Puget Sound Area 7 Sport,57,PGSDN S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+153,TNPS S,North Puget Sound (Area 5-7) Terminal Sport,58,TPGSDN TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+155,PS 8-1 S,Puget Sound Area 8-1 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+156,PS 8-2 S,Puget Sound Area 8-2 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+157,PS 9 S,Puget Sound Area 9 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+173,TBUOY 10 S,Terminal Buoy 10 Sport,67,TCOL R S,US,999,S,COLR Sport,ISBM,Terminal.Fishery_Southern.US_S
+174,TCOL R S,Terminal Above Buoy 10 Sport,67,TCOL R S,US,999,S,CR Sport,ISBM,Terminal.Fishery_Southern.US_S
+159,PS 10 S,Puget Sound Area 10 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+160,PS 11 S,Puget Sound Area 11 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+161,PS 12 S,Puget Sound Area 12 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+164,PS 13 S,Puget Sound Area 13 Sport,59,PGSDO S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+162,TPS 12 S,Puget Sound Area 12 Terminal Sport,60,TPGSDO TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
+180,TORC FS,Oregon Coast Freshwater Sport,76,TSF TERM FS,US,999,S,OR Sport,ISBM,Terminal.Fishery_Southern.US_S
+165,TSPS S,South Puget Sound (10-11-13) Terminal Sport,60,TPGSDO TERM S,US,999,S,PGSD Sport,ISBM,ISBM.Fishery_Puget.Sd_S
 182,COST REC,Cost Recovery,80,ESCAPEMENT,US,999,O,SEAK Other,Other,Esc.
 183,PERS USE,Personal Use,80,ESCAPEMENT,US,999,O,SEAK Other,Other,Esc.
 184,SUB,Subsistence,80,ESCAPEMENT,US,999,O,SEAK Other,Other,Esc.
