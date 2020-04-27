@@ -59,15 +59,17 @@ cas.use <-read.csv("DATA/casdf.csv",stringsAsFactors = FALSE)
 
 source("TEMP/FUNCTION_calcMonthly_TEMP.R")
 
-test <- calcMonthlyTEMP(stk = "ATN", fmap = fmap.use,
+test <- calcMonthlyTEMP(fmap = fmap.use,
                         pathdb = NULL, # either give pathdb OR cas
                         cas =   cas.use,
-                        tracing = FALSE)
+                        tracing = FALSE,
+                        infill = TRUE)
 
-write.csv(test,"TEMP/test.csv")
+head(test)
+write.csv(test,"TEMP/test.csv",row.names = FALSE)
 
 
-
+sort(unique(test$Recovery_Year))
 
 
 
