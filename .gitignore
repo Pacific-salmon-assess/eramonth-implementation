@@ -7,3 +7,5 @@ TEMP
 .Rhistory
 .RData
 .Ruserdata
+
+*.html

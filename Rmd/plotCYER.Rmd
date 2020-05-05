@@ -1,0 +1,516 @@
+--- 
+title: '2019 CYER by stock, fisheries and month'
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+--- 
+
+
+```{r setup, echo=FALSE}
+library(tidyverse)
+library(eramonth)
+
+```
+
+```{r data, include=FALSE}
+
+da <- read.csv("../data/moncyer.csv",)
+
+da$Month <- factor(da$Recovery_Month)
+da <- da[da$Recovery_Year==2019,]
+summary(da)
+
+
+
+#
+
+```
+
+Column {.tabset}
+-------------------------------------
+
+### ATN
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="ATN"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+
+### BQR
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="BQR"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+### CHI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="CHI"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+
+
+### COW
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="COW"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+### HAR
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="HAR"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+### KLM
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="KLM"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### KLY
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="KLY"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### MSH
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="MSH"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+### NIC
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="NIC"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### PHI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="PHI"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### PPS
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="PPS"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### QUI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="QUI"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+### RBT
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="RBT"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
+### SHU
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="SHU"& !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+&da$Fishery_Group != "ESC_Stray_US",]
+
+
+mdf <- dachi %>%
+  group_by(Stock,Stock_Name,Fishery_Group )  %>%
+  summarize(CYERannual=unique( value))
+
+
+
+p <- ggplot(dachi) +
+	geom_bar(aes(x=Recovery_Month,y= moncyer,fill= moncyer),stat = "identity") +
+	facet_wrap(~Fishery_Group )+
+	theme_bw(12) + ylab("CYER") +
+	scale_fill_viridis_c(option="D",direction = -1) +
+	geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+
+
+
+ ggplotly(p)%>%layout(
+     margin = list(b = 100, l = 150,r = 150))
+
+
+
+```
+
+
+
