@@ -1,0 +1,293 @@
+--- 
+title: '2009-2019 CYER by stock, fisheries and month'
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+--- 
+
+
+```{r setup, echo=FALSE}
+library(tidyverse)
+library(eramonth)
+library(plotly)
+
+```
+
+```{r data, include=FALSE}
+
+da <- read.csv("../data/moncyer.csv",)
+
+da$Month <- factor(da$Recovery_Month)
+da$Year<- factor(da$Recovery_Year)
+
+cyerraster <- function(dachi){
+    p <- ggplot(dachi) +
+	     geom_raster(aes(x=Month,y=Year,fill= moncyer),stat = "identity") +
+	     facet_wrap(~Fishery_Group )+
+	     theme_bw(10) + ylab("CYER") + 
+	     scale_y_discrete(limits = rev(levels(dachi$Year)), 
+	     	breaks = rev(levels(dachi$Year))[seq(1,length(levels(dachi$Year)),by=2)]) +
+	     scale_fill_viridis_c(option="A",direction = -1, end=.9) +
+	     #geom_bar(data=mdf,aes(x=13,y=CYERannual),fill="black",alpha=.6,stat = "identity") +
+	     ggtitle(paste(unique(dachi$Stock_Name),"-", unique(dachi$Stock)))
+    return(p)
+}
+
+da <- da[ da$moncyer>0 & !is.na(da$moncyer) & 
+da$Fishery_Group != "ESC_Home" &da$Fishery_Group != "ESC_Stray_CA"
+& da$Fishery_Group != "ESC_Stray_US",]
+
+#
+
+```
+
+Column {.tabset}
+-------------------------------------
+
+### ATN
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="ATN",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+
+### BQR
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="BQR",]
+
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+### CHI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="CHI",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+
+
+### COW
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="COW",]
+
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+### HAR
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="HAR",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+### KLM
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="KLM",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+```
+
+
+
+### KLY
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="KLY",]
+
+
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+### MSH
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="MSH",]
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+
+
+### NIC
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="NIC",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+
+```
+
+
+
+### PHI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="PHI",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+```
+
+
+
+### PPS
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="PPS",]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+```
+
+
+
+### QUI
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="QUI" &
+ da$Fishery_Group != "ISBM_SBC_JNST_TERM_S" &
+ da$Fishery_Group != "TERM_CA_GEO_ST_FS",]
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+```
+
+
+
+
+### RBT
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="RBT" & 
+ da$Fishery_Group != "TERM_CA_WCVI_S" &
+ da$Fishery_Group != "TERM_CA_WCVI_S" &
+ da$Fishery_Group != "TERM_CA_WCVI_FS",]
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+```
+
+
+
+### SHU
+
+```{r , echo=FALSE}
+
+dachi <- da[da$Stock=="SHU" ,]
+
+
+
+ ggplotly(cyerraster(dachi))%>%layout(
+     margin = list(b = 50, l = 150,r = 150))
+
+
+```
+
+
+

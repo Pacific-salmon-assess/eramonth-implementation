@@ -13,10 +13,10 @@ library(eramonth)
 
 
 fmap.use.idi  <- read.csv("../DATA/Ck_CFile2ERA_Match.csv",stringsAsFactors = FALSE) %>%
-                  left_join(read.csv("../DATA/Ck_Fishery_Matches.csv", stringsAsFactors = FALSE), by="ERANO") %>%
+                  left_join(read.csv("../DATA/Ck_Fishery_Matches_cat.csv", stringsAsFactors = FALSE), by="ERANO") %>%
                   select(CFILENO,IDI_Group) %>%
                   arrange(IDI_Group)
-
+length(unique(fmap.use.idi$IDI_Group))
 
 if(sum(is.na(fmap.use.idi$IDI_Group))>0){warning("Some missing matches between CFILENO and IDI grouping")}
 #str(fmap.use.idi)
@@ -30,9 +30,53 @@ monthly.idi <- calcMonthly(fmap = fmap.use.idi,
                         infill = TRUE)
 
 cmz.path <- "C:/Users/worc/Documents/CTC/ERA/2020/mortality_distribution_table/MDT_CADdetail/mdtresult/catchDistribution_CMZ.csv"
+cmz <- read.csv(cmz.path, stringsAsFactors =FALSE)
+
 
 moncyer <- calmmoncyer(monthly.idi=monthly.idi, cmzpath=cmz.path)
 write.csv(moncyer,"../DATA/moncyer.csv",row.names = FALSE)
+
+
+
+names(monthly.idi)
+unique(monthly.idi$Fishery_Group)
+
+length(names(cmz)[4:ncol(cmz)])
+length(unique(monthly.idi$Fishery_Group))
+
+
+cbind(
+sort(names(monthly.idi)),
+sort(unique(monthly.idi$Fishery_Group)))
+
+excludedfis<- names(cmz)[4:ncol(cmz)][is.na(match(names(cmz)[4:ncol(cmz)],unique(monthly.idi$Fishery_Group) ))]
+
+fmap.use.idi[fmap.use.idi$IDI_Group %in%excludedfis,]
+
+
+names(cmz)[4:ncol(cmz)]
+
+unique(tt)[match(unique(tt),names(cmz)[4:ncol(cmz)])]
+
+length(names(cmz)[4:ncol(cmz)])
+length(unique(monthly.idi$Fishery_Group))
+
+length(unique(tt))
+
+
+fishmatch2<-cbind(
+    unique(monthly.idi$Fishery_Group)[match( names(cmz)[4:ncol(cmz)],unique(monthly.idi$Fishery_Group) )], 
+    names(cmz)[4:ncol(cmz)])
+
+fishmatch<-cbind(
+  names(cmz)[4:ncol(cmz)][match(unique(monthly.idi$Fishery_Group), names(cmz)[4:ncol(cmz)]  )],
+  unique(monthly.idi$Fishery_Group))
+
+fishmatch[,2][is.na(fishmatch[,1])]
+
+fishmatch2[,2][is.na(fishmatch2[,1])]
+
+
 dim(moncyer)
 head(moncyer)
 
@@ -117,4 +161,32 @@ monthlycwt$monprop <- monthlycwt$x/monthlycwt$yeartotal
 
 
 
+rmarkdown::render('plotCYER.Rmd', encoding = 'UTF-8')
+rmarkdown::render('plotCYER_allyears.Rmd', encoding = 'UTF-8')
 
+
+
+#
+
+
+
+#
+#
+#
+#
+
+#
+#
+#
+#
+#================================
+#mapping cmz investigation
+
+
+unique(cmz$stock)
+
+
+harcmz <- cmz[cmz$stock=="HAR",]
+
+
+names(harcmz)
