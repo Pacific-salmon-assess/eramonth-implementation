@@ -3,6 +3,12 @@
 #do not expect any organization or documentation in this file
 #=========================================================================
 
+setwd("C:/Users/worc/Documents/CTC/eramonth_proj/eramonth")
+devtools::document()
+devtools::build()
+path.install <- "C:/Users/worc/Documents/CTC/eramonth_proj/eramonth_0.0.0.9000.tar.gz"
+
+system(paste0("Rcmd.exe INSTALL --preclean --no-multiarch --with-keep.source ", path.install))
 
 
 
